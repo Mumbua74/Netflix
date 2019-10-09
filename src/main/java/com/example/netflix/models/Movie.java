@@ -3,50 +3,51 @@ package com.example.netflix.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-//@Entity
-//@Table(name = "movies")
+@Entity
+@Table(name = "movies")
 public class Movie {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "movie_id")
-    private Long movie_id;
-//
-//    @NotNull
-//    @Column(name = "movie_name")
-    private String movie_name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "movie_id")
+    private Long movieId;
 
-//    @NotNull
-//    @Column(name = "type")
+    @NotNull
+    @Column(name = "movie_name")
+    private String movieName;
+
+    @NotNull
+    @Column(name = "type")
     private String type;
 
-//    @Column(name = "subscriber_id")
-    private Long subscriber_id;
+    @Column(name = "subscriber_id")
+    private Long subscriberId;
 
-//    @NotNull
-//    @Column(name = "category_id")
-    private Long category_id;
+    @NotNull
+    @Column(name = "category_id")
+    private Long categoryId;
 
-    public Movie(@NotNull String movie_name, @NotNull String type, @NotNull Long category_id) {
-        this.movie_name = movie_name;
+    public Movie(@NotNull String movieName, @NotNull String type, Long subscriberId, @NotNull Long categoryId) {
+        this.movieName = movieName;
         this.type = type;
-        this.category_id = category_id;
+        this.subscriberId = subscriberId;
+        this.categoryId = categoryId;
     }
 
-    public Long getMovie_id() {
-        return movie_id;
+    public Long getMovieId() {
+        return movieId;
     }
 
-    public void setMovie_id(Long movie_id) {
-        this.movie_id = movie_id;
+    public void setMovieId(Long movieId) {
+        this.movieId = movieId;
     }
 
-    public String getMovie_name() {
-        return movie_name;
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setMovie_name(String movie_name) {
-        this.movie_name = movie_name;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
     public String getType() {
@@ -57,30 +58,30 @@ public class Movie {
         this.type = type;
     }
 
-    public Long getSubscriber_id() {
-        return subscriber_id;
+    public Long getSubscriberId() {
+        return subscriberId;
     }
 
-    public void setSubscriber_id(Long subscriber_id) {
-        this.subscriber_id = subscriber_id;
+    public void setSubscriberId(Long subscriberId) {
+        this.subscriberId = subscriberId;
     }
 
-    public Long getCategory_id() {
-        return category_id;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(Long category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     @Override
     public String toString() {
         return "Movie{" +
-                "movie_id=" + movie_id +
-                ", movie_name='" + movie_name + '\'' +
+                "movieId=" + movieId +
+                ", movieName='" + movieName + '\'' +
                 ", type='" + type + '\'' +
-                ", subscriber_id=" + subscriber_id +
-                ", category_id=" + category_id +
+                ", subscriberId=" + subscriberId +
+                ", categoryId=" + categoryId +
                 '}';
     }
 }
