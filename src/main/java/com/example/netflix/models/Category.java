@@ -5,45 +5,45 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-//@Entity
-//@Table(name = "categories")
+@Entity
+@Table(name = "categories")
 public class Category {
 
-//    @Id
-//    @NotNull
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "category_id")
-    private Long catrgory_id;
+    @Id
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "category_id")
+    private Long catrgoryId;
 
-//    @NotNull
-//    @Column(name = "category_name")
-    private String category_name;
+    @NotNull
+    @Column(name = "categor_name")
+    private String categoryName;
 
-    public Category(@NotNull String category_name) {
-        this.category_name = category_name;
+    public Category(@NotNull String categoryName) {
+        this.categoryName = categoryName;
     }
 
-    public Long getCatrgory_id() {
-        return catrgory_id;
+    public Long getCatrgoryId() {
+        return catrgoryId;
     }
 
-    public void setCatrgory_id(Long catrgory_id) {
-        this.catrgory_id = catrgory_id;
+    public void setCatrgoryId(Long catrgoryId) {
+        this.catrgoryId = catrgoryId;
     }
 
-    public String getCategory_name() {
-        return category_name;
+    public String getCategoryName() {
+        return categoryName;
     }
 
-    public void setCategory_name(String category_name) {
-        this.category_name = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     @Override
     public String toString() {
         return "Category{" +
-                "catrgory_id=" + catrgory_id +
-                ", category_name='" + category_name + '\'' +
+                "catrgoryId=" + catrgoryId +
+                ", categoryName='" + categoryName + '\'' +
                 '}';
     }
 }
